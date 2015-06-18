@@ -1,6 +1,6 @@
 # Insert filter plugin for Embulk
 
-Embulk plugin that insert column(s) at any position (e.g., the top/bottom of the columns, before/after the specified column name)
+Embulk filter plugin that inserts column(s) at any position (e.g., the top/bottom of the columns, before/after the specified column name)
 
 ## Overview
 
@@ -43,6 +43,7 @@ Example 2: Insert "host_name" column at the bottom of the columns
 ```yaml
 filters:
   - { type: insert, column: { host_name: host01 }, at: bottom }
+```
 
 Example 3: Insert "host_name" column after second column
 

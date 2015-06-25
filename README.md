@@ -70,7 +70,7 @@ Example 6: Insert "user_id" column as integer at the bottom of the columns
 
 ```yaml
 filters:
-  - { type: insert, column: { user_id: 1234567, as: integer } }
+  - { type: insert, column: { user_id: 1234567, as: long } }
 ```
 
 Example 7: Insert multiple columns in a row at the bottom of the columns
@@ -90,7 +90,7 @@ filters:
   - type: insert
     columns:
       - service_name: service01
-      - { user_id: 1234567, as: integer }
+      - { user_id: 1234567, as: long }
     after: host_name
 ```
 

@@ -1,13 +1,13 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "embulk-filter-insert"
-  spec.version       = "0.1.0"
-  spec.authors       = ["Masahiro Yoshizawa"]
-  spec.summary       = "Insert filter plugin for Embulk"
-  spec.description   = "Insert"
+  spec.version       = "1.0.0"
+  spec.authors       = ["muziyoshiz"]
+  spec.summary       = "Embulk filter plugin that inserts column(s) at any position"
+  spec.description   = "Embulk filter plugin that inserts column(s) at any position (e.g., the top/bottom of the columns, before/after the specified column name)"
   spec.email         = ["muziyoshiz@gmail.com"]
   spec.licenses      = ["MIT"]
-  # TODO set this: spec.homepage      = "https://github.com/muziyoshiz/embulk-filter-insert"
+  spec.homepage      = "https://github.com/muziyoshiz/embulk-filter-insert"
 
   spec.files         = `git ls-files`.split("\n") + Dir["classpath/*.jar"]
   spec.test_files    = spec.files.grep(%r{^(test|spec)/})

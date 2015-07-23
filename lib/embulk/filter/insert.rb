@@ -1,7 +1,7 @@
 module Embulk
   module Filter
 
-    class InsertFilterPlugin < FilterPlugin
+    class Insert < FilterPlugin
       Plugin.register_filter("insert", self)
 
       def self.transaction(config, in_schema, &control)
@@ -15,9 +15,9 @@ module Embulk
         end
 
         if column
-          columns = [ InsertFilterPlugin.get_column(column) ]
+          columns = [ Insert.get_column(column) ]
         else
-          columns = InsertFilterPlugin.get_columns(columns)
+          columns = Insert.get_columns(columns)
         end
 
         task["values"] = columns.map{|c| c[:value] }
@@ -117,7 +117,7 @@ module Embulk
 
       # return array of column
       def self.get_columns(columns_array)
-        columns_array.map{|column_hash| InsertFilterPlugin.get_column(column_hash) }
+        columns_array.map{|column_hash| Insert.get_column(column_hash) }
       end
 
       def init

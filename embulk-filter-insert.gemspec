@@ -15,5 +15,6 @@ Gem::Specification.new do |spec|
 
   #spec.add_dependency 'YOUR_GEM_DEPENDENCY', ['~> YOUR_GEM_DEPENDENCY_VERSION']
   spec.add_development_dependency 'bundler', ['~> 1.0']
+  spec.add_development_dependency 'embulk', ['~> 0.7.1']
   spec.add_development_dependency 'rake', ['>= 10.0']
 end

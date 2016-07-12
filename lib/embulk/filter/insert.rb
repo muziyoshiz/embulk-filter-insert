@@ -1,3 +1,4 @@
+require 'json'
 module Embulk
   module Filter
 
@@ -108,8 +109,10 @@ module Embulk
           # do nothing
         when :timestamp
           column[:value] = Date.parse(column[:value])
+        when :json
+          column[:value] = JSON.parse(column[:value]) if column[:value]
         else
-          raise ArgumentError, "Unknown type #{type}: supported types are boolean, long, double, string and timestamp"
+          raise ArgumentError, "Unknown type #{type}: supported types are boolean, long, double, string, timestamp and json"
         end
 
         column

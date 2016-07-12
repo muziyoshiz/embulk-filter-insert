@@ -98,6 +98,10 @@ module Embulk
           :type => type
         }
 
+        # In the following case, this plugin inserts null
+        # e.g., { type: insert, column: { user_id: null, as: long } }
+        return column if column[:value].nil?
+
         case type
         when :boolean
           column[:value] = (column[:value] != "false")
@@ -110,7 +114,7 @@ module Embulk
         when :timestamp
           column[:value] = Date.parse(column[:value])
         when :json
-          column[:value] = JSON.parse(column[:value]) if column[:value]
+          column[:value] = JSON.parse(column[:value])
         else
           raise ArgumentError, "Unknown type #{type}: supported types are boolean, long, double, string, timestamp and json"
         end

@@ -17,7 +17,7 @@ Either "column" or "columns" is required for specifying inserted column(s).
 
 The "column" associate array can contain following optional configuration.
 
-- **as**: type of the constant vaule in the column, i.e. boolean, long, double, string or timestamp (string, default: string)
+- **as**: type of the constant vaule in the column, i.e. boolean, long, double, string, timestamp or json(string, default: string)
 
 ### Position
 

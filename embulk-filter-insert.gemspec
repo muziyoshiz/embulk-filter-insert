@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "embulk-filter-insert"
-  spec.version       = "1.1.0"
+  spec.version       = "1.1.1"
   spec.authors       = ["Masahiro Yoshizawa"]
   spec.summary       = "Embulk filter plugin that inserts column(s) at any position"
   spec.description   = "Embulk filter plugin that inserts column(s) at any position (e.g., the top/bottom of the columns, before/after the specified column name)"
